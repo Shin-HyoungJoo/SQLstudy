@@ -151,3 +151,12 @@ WHERE rating IN (
 SELECT title 
 FROM film
 WHERE rating not IN('PG-13', 'R', 'NC-17');
+
+SELECT LEFT('abcdefg',2),RIGHT('abcdefg',2),MID('abcdefg',2,3);
+
+
+-- 문자함수 이용하여 고객성이 Q로 시작하는 사람 궁금하다.
+SELECT *
+FROM customer
+-- WHERE last_name LIKE 'Q%';
+WHERE left(last_name, 1) = 'Q';
