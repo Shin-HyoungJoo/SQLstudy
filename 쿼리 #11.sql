@@ -21,6 +21,9 @@ WHERE last_name REGEXP '^[QY]';
 SELECT * FROM customer
 WHERE last_name REGEXP '[LY]$';
 
+SELECT * FROM customer
+WHERE last_name REGEXP '+COB+';
+
 SELECT rental_id, customer_id
 FROM rental
 WHERE return_date IS NULL;
@@ -122,5 +125,7 @@ WHERE A.first_name = 'JOHN';
 SELECT A.address, B.address, A.city_id 
 FROM address A
 INNER JOIN address B
-ON A.city_id = B.city_id
+ON A.city_id = B.city_id 
 WHERE A.address_id <> B.address_id;
+
+-- ON A.city_id = B.city_id AND A.address_id <> B.address_id; 와 같은말.
