@@ -162,7 +162,8 @@ SELECT first_name,
 FROM customer
 WHERE customer_id = 41;
 
-SELECT 'goodbye world', INSERT('goodbye world', 9, 0, 'cruel ');
+SELECT 'goodbye world', INSERT('goodbye world', 9, 0, 'cruel '),
+INSERT('goodbye 1234 world', POSITION('world' IN 'goodbye 1234 world'), CHAR_LENGTH('world'), 'class');
 
 -- 영화 제목 빈칸에 NICE 추가해주세요.
 SELECT title, INSERT(title, POSITION(' ' IN title) ,0 ,' NICE')
@@ -171,7 +172,8 @@ FROM film;
 SELECT email, 
 substring(email, 3), 
 SUBSTRING(email, 3, 6), 
-SUBSTR(email, 3, 6)
+SUBSTR(email, 3, 6),
+MID(email, 3, 6)
 FROM customer;
 
 
@@ -205,4 +207,14 @@ SELECT CURDATE(), SYSDATE()
  , last_day(NOW())
  , DATE_SUB(NOW(), INTERVAL '2' YEAR)
  , EXTRACT(DAY FROM NOW())
- , DATEDIFF('2023-09-20','2023-05-11');
+ , DATEDIFF('2023-09-20','2023-05-12');
+ 
+ 
+-- 7-1
+SELECT substr('Please find the substring in this string',17,25);
+
+-- 7-2
+SELECT ABS(-25.76823), STRCMP(-25.76823, 0), TRUNCATE(-25.76823, 2);
+
+-- 7-3
+SELECT month(now());

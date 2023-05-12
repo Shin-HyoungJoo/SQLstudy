@@ -92,8 +92,8 @@ INNER JOIN actor C
 ON B.actor_id = C.actor_id
 WHERE (A.first_name, A.last_name) IN (('CATE', 'MCQUEEN'), ('CUBA', 'BIRCH'));
 
-SELECT * FROM
-film F
+SELECT * 
+FROM film F
 INNER JOIN
 (
 	SELECT B.film_id FROM actor A
