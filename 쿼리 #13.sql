@@ -6,7 +6,7 @@ ORDER BY COUNT(1) DESC;
 
 SELECT * FROM rental
 ORDER BY rental_id desc
-LIMIT 2, 2;
+LIMIT 2, 5;
 
 -- join 이용하여 사용자 이름 찍기.
 SELECT A.first_name, A.last_name, B.customer_id, COUNT(1) cnt
@@ -148,4 +148,3 @@ FROM payment
 GROUP BY customer_id
 HAVING cnt >= 40
 ORDER BY customer_id;
-
